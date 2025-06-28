@@ -12,19 +12,19 @@ variable "server_name" {
 variable "server_type" {
     description = "Type of the Hetzner server (e.g., cx11, cx21)"
     type        = string
-    default     = "cx11"
+    default     = "cax11"
 }
 
 variable "server_location" {
     description = "Location for the server (e.g., fsn1, nbg1, hel1)"
     type        = string
-    default     = "fsn1"
+    default     = "nbg1"
 }
 
 variable "image" {
     description = "Image to use for the server (e.g., ubuntu-22.04)"
     type        = string
-    default     = "ubuntu-22.04"
+    default     = "debian-12"
 }
 
 variable "ssh_keys" {
