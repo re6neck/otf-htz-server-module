@@ -35,8 +35,8 @@ variable "ssh_keys" {
 
 variable "cloud_init" {
     type = object({
-        gzip          = true
-        base64_encode = true
+        gzip          = bool
+        base64_encode = bool
         config        = any
     })
     description = "Cloud-init user data to configure the server"
