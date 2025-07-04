@@ -1,6 +1,6 @@
 data "cloudinit_config" "user_data" {
-  gzip          = true
-  base64_encode = true
+  gzip          = var.cloud_init["gzip"]
+  base64_encode = var.cloud_init["base64_encode"]
 
   part {
     filename     = "cloud-config.yml"
