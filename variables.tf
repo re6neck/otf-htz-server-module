@@ -10,19 +10,19 @@ variable "server_name" {
 }
 
 variable "server_type" {
-    description = "Type of the Hetzner server (e.g., cx11, cx21)"
+    description = "Type of the Hetzner server"
     type        = string
     default     = "cax11"
 }
 
 variable "server_location" {
-    description = "Location for the server (e.g., fsn1, nbg1, hel1)"
+    description = "Location for the server"
     type        = string
     default     = "nbg1"
 }
 
 variable "image" {
-    description = "Image to use for the server (e.g., ubuntu-22.04)"
+    description = "Image to use for the server"
     type        = string
     default     = "debian-12"
 }
@@ -31,4 +31,18 @@ variable "ssh_keys" {
     description = "List of SSH key names or IDs to inject"
     type        = list(string)
     default     = []
+}
+
+variable "cloud_init" {
+    type = object({
+        gzip          = true
+        base64_encode = true
+        config        = any
+    })
+    description = "Cloud-init user data to configure the server"
+    default = {
+        gzip          = true
+        base64_encode = true
+        config        = {}
+    }
 }
